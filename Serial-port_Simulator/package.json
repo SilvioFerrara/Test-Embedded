@@ -1,0 +1,36 @@
+{
+    "name": "serial-port_simulator",
+    "version": "0.0.0",
+    "author": "SilvioFerrara",
+    "license": "MIT",
+    "main": "./src/index.ts",
+    "devicescript": {
+        "library": true
+    },
+    "dependencies": {
+        "serialport": "^12.0.0"
+    },
+    "devDependencies": {
+        "@devicescript/cli": "latest"
+    },
+    "scripts": {
+        "setup": "devicescript build --quiet",
+        "build:devicescript": "devicescript build src/main.ts",
+        "postinstall": "npm run setup",
+        "build": "npm run build:devicescript",
+        "watch:devicescript": "devicescript devtools src/main.ts",
+        "watch": "npm run watch:devicescript",
+        "test:devicescript": "devicescript run src/main.ts --test --test-self-exit",
+        "test": "npm run test:devicescript",
+        "start": "npm run watch",
+        "build:docs": "npx typedoc ./src/index.ts --tsconfig ./src/tsconfig.json"
+    },
+    "files": [
+        "src/*.ts",
+        "devsconfig.json"
+    ],
+    "keywords": [
+        "devicescript"
+    ],
+    "description": "This project uses [DeviceScript](https://microsoft.github.io/devicescript/)."
+}
